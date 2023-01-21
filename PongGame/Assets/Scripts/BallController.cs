@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    public AudioSource audioSource;
     public ScoreWall scoreBoard;
     public Rigidbody2D rb;
     public float speed;
@@ -26,6 +27,7 @@ public class BallController : MonoBehaviour
         startGame();
     }
     void OnCollisionEnter2D(Collision2D denetle) {
+        audioSource.Play();
         if (denetle.gameObject.name == "redwall")
         {
             Debug.Log ("kırmızı duvar");
