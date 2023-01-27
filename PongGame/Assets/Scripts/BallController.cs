@@ -20,25 +20,11 @@ public class BallController : MonoBehaviour
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
         rb.velocity = new Vector2(x*speed, y*speed);
     }
-    IEnumerator restartBall(){
+    
+    public void resetBall(){
         rb.velocity = new Vector2(0,0);
         rb.transform.position = new Vector2(0,0);
-        yield return new WaitForSeconds (0.1f);
-        startGame();
+        Invoke("startGame",0.1f);
     }
-    void OnCollisionEnter2D(Collision2D denetle) {
-        audioSource.Play();
-        if (denetle.gameObject.name == "redwall")
-        {
-            Debug.Log ("kırmızı duvar");
-            scoreBoard.BluePlayerGoal();
-            StartCoroutine(restartBall());
-        }
-        else if(denetle.gameObject.name == "bluewall"){
-            Debug.Log ("mavi duvar");
-            scoreBoard.RedPlayerGoal();
-            StartCoroutine(restartBall());
-
-        }
-    }
+    
 }
