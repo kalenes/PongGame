@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class BallController : MonoBehaviour
 {
+    public PhotonView pw;
     public AudioSource audioSource;
-    public ScoreWall scoreBoard;
     public Rigidbody2D rb;
     public float speed;
 

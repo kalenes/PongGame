@@ -650,6 +650,7 @@ MonoBehaviour:
   roomName: {fileID: 1810060792}
   roomItemPrefab: {fileID: 2557522414534364901, guid: 9203b423ad20e6842962f79737c65ec4, type: 3}
   contentObject: {fileID: 2138870159}
+  timeBetweenUpdater: 1.5
 --- !u!4 &471936542
 Transform:
   m_ObjectHideFlags: 0
@@ -1769,7 +1770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00009748195}
+  m_AnchoredPosition: {x: 0, y: 0.00005630979}
   m_SizeDelta: {x: 0, y: 963.64}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2138870160

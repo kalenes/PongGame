@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class ScoreZone : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class ScoreZone : MonoBehaviour
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.GetComponent<BallController>() != null)
+        if (col.gameObject.GetComponent<BallController>().pw.IsMine)
         {
             score ++;
             scoreText.text = score.ToString();

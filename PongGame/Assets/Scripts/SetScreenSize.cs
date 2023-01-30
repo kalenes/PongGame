@@ -18,6 +18,5 @@ public class SetScreenSize : MonoBehaviour
         mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z);
 
         Vector3 topLeftPosition = new Vector3(-camHalfWidth, 0, 0) + Camera.main.transform.position;
-        print("Top Left : " + topLeftPosition);
     }
 }

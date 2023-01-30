@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public TMPro.TMP_InputField roomInputField;
@@ -21,6 +22,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinLobby();
     }
+    private void Update()
+    {
+        /*if(PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }*/
+    }
     public void OnClickCreate()
     {
         if (roomInputField.text.Length >=1)
@@ -33,6 +41,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         lobbyPanel.SetActive(false);
         roomPanel.SetActive(true);
         roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
+        SceneManager.LoadScene("SampleScene");
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -78,4 +87,5 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinLobby();
     }
+
 }
